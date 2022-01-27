@@ -1,7 +1,7 @@
 import joi from 'joi';
 
 // Schema_function create user
-const validateCreateUser=function validate(user:any)
+const validateCreateUser=function validate(user:string)
 {
 	const joiSchema=joi.object({
 		Name:joi.string().required(),

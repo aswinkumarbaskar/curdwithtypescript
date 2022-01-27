@@ -18,7 +18,7 @@ const getUser=async ()=>
 	return user;
 }
 
-const createUser=async (Name:string,Place:string,Email:string,Age:number)=>
+const createUser=async (Name:string,Place:string,Email:string,Age:number):Promise<any>=>
 {
 
 	const user=await new model({_id:new mongoose.Types.ObjectId(),Name,Place,Email,Age});
@@ -26,25 +26,23 @@ const createUser=async (Name:string,Place:string,Email:string,Age:number)=>
 	return "User Created";
 }
 
-const getUserByName=async (Name:string)=>
+const getUserByName=async (Name:string):Promise<any>=>
 {
 	const user=await model.find({Name:Name});
 	return user;
 	
 }
 
-const updateEmail=async (Name:string,Email:string)=>
+const updateEmail=async (Name:string,Email:string):Promise<any>=>
 {
 	const user=await model.findOneAndUpdate({Name:Name},{Email:Email});
 	return "Email Updated";
 		
 }
 
-const deleteUser=async (Name:string)=>
+const deleteUser=async (Name:string):Promise<any>=>
 {
 		const user=await model.findOneAndRemove({Name:Name});
 		return "User Deleted"
 }
 export {getUser,createUser,getUserByName,updateEmail,deleteUser}
-
-

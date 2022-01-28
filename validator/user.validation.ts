@@ -1,7 +1,7 @@
 import joi from 'joi';
 
 // Schema_function create user
-const validateCreateUser=function validate(user:any)
+const validateCreateUser=function validate(user:any):any
 {
 	const joiSchema=joi.object({
 		Name:joi.string().required(),
@@ -13,7 +13,7 @@ const validateCreateUser=function validate(user:any)
 }
 
 // Schema_function update Email
-const validateUpdateEmail=function validate(user:any)
+const validateUpdateEmail=function validate(user:any):any
 {
 	const joiSchema=joi.object({
 		Name:joi.string().required(),

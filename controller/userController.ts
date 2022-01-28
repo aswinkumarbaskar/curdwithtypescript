@@ -5,7 +5,7 @@ import validator from '../validator/user.validation';
 
 //controller for get all user
 
-const getUser=async (req:Request,res:Response)=>
+const getUser=async (req:Request,res:Response):Promise<any>=>
 {
 
 	try
@@ -21,7 +21,7 @@ const getUser=async (req:Request,res:Response)=>
 
 }
 // controller create a new user
- const createUser=async (req:Request,res:Response)=>
+ const createUser=async (req:Request,res:Response):Promise<any>=>
 {
 	let {Name,Place,Email,Age}=req.body;
 
@@ -47,7 +47,7 @@ const getUser=async (req:Request,res:Response)=>
 }
 // controller for get particular user by name
 
-const getUserByName=async (req:Request,res:Response)=>
+const getUserByName=async (req:Request,res:Response):Promise<any>=>
 {
 	try
 	{
@@ -64,10 +64,11 @@ const getUserByName=async (req:Request,res:Response)=>
 }
 
 // controller for update Email of particular user 
-const updateEmail=async (req:Request,res:Response)=>
+const updateEmail=async (req:Request,res:Response):Promise<any>=>
 {
 
 	var userRequest={Name:req.query.name as string,Email:req.body.Email as string};
+
 	let response=validator.validateUpdateEmail(userRequest);
 	
 	if(response.error)
@@ -90,7 +91,7 @@ const updateEmail=async (req:Request,res:Response)=>
 
 }
 // controller for delete a particular user..
-const deleteUser=async (req:Request,res:Response)=>
+const deleteUser=async (req:Request,res:Response):Promise<any>=>
 {	
 	let Name=req.query.name as string
 	try

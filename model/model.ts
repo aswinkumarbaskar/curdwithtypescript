@@ -12,7 +12,7 @@ const userSchema:Schema=new Schema({
 
 const model=mongoose.model<User>('USER',userSchema);
 
-const getUser=async ()=>
+const getUser=async ():Promise<any>=>
 {
 	const user= await model.find();
 	return user;
